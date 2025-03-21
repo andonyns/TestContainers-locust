@@ -8,13 +8,20 @@ from models.customers import Customer
 load_dotenv()
 
 def get_connection():
-        host = os.getenv("DB_HOST", "localhost")
-        port = os.getenv("DB_PORT", "5432")
-        username = os.getenv("DB_USERNAME", "postgres")
-        password = os.getenv("DB_PASSWORD", "postgres")
-        database = os.getenv("DB_NAME", "postgres")
-        print(f"host={host} dbname={database} user={username} password={password} port={port}")
-        return psycopg.connect(f"host={host} dbname={database} user={username} password={password} port={port}")
+        try:
+            host = os.getenv("DB_HOST", "localhost")
+            port = os.getenv("DB_PORT", "5432")
+            username = os.getenv("DB_USERNAME", "postgres")
+            password = os.getenv("DB_PASSWORD", "postgres")
+            database = os.getenv("DB_NAME", "postgres")
+            print(f"host={host} dbname={database} user={username} password={password} port={port}")
+            return psycopg.connect(
+                f"host={host} dbname={database} user={username} password={password} port={port}", 
+                connect_timeout=1)
+        except psycopg.errors.ConnectionTimeout as e:
+            print(f"Error connecting to database: {e}")
+            exit(1)
+
 
 class DB:
 
