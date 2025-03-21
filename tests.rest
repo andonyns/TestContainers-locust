@@ -1,0 +1,14 @@
+GET http://127.0.0.1:5000
+
+###
+
+GET http://127.0.0.1:5000/customers
+
+###
+
+POST http://127.0.0.1:5000/customers/add
+
+{
+    "name": "Andony",
+    "email": "andony@test.com"
+}
