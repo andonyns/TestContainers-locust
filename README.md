@@ -1,6 +1,3 @@
-# TestContainers Demo
+# Load Testing with TestContainers and Locust
 
-Demo of TestContainers using Python and PostgreSQL.
-
-Modified version of https://testcontainers.com/guides/getting-started-with-testcontainers-for-python/. 
-This uses TestContainers for the main app.
+Demo of load testing an app that uses TestContainers
