@@ -4,8 +4,10 @@ FROM python:3.13-slim
 # Set the working directory in the container
 WORKDIR /fe
 
+ENV 'TC_HOST'='localhost'
+
 # Copy the requirements file into the container
-COPY ../requirements.txt .
+COPY requirements.txt .
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt

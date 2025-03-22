@@ -1,0 +1,11 @@
+certifi==2025.1.31
+charset-normalizer==3.4.1
+docker==7.1.0
+idna==3.10
+python-dotenv==1.0.1
+pywin32==310
+requests==2.32.3
+testcontainers==4.9.2
+typing_extensions==4.12.2
+urllib3==2.3.0
+wrapt==1.17.2
